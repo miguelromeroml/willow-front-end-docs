@@ -8,14 +8,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Willow-FE docs',
   tagline: 'Willow FE',
-  url: 'https://github.com/missionlane/willow-front-end',
+  url: 'https://miguelromeroml.github.io/willow-front-end-docs/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'MissionLane', // Usually your GitHub org/user name.
+  organizationName: 'miguelromeroml', // Usually your GitHub org/user name.
   projectName: 'willow-front-end-docs', // Usually your repo name.
-
+  trailingSlash: false,
   presets: [
     [
       'classic',
