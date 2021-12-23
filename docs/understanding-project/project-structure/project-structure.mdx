@@ -1,0 +1,31 @@
+---
+
+---
+# Project Structure
+The main structure is the next
+```
+willow-fe
+  |-src
+  |-mockServer
+  |-cypress
+  |-pact
+  |-public
+  |-k8s
+```
+
+## src
+In the `src` folder we will have all the react components and hooks, api clients, tests, images and styles. It is the place where all the code will be exposed for new features.
+
+## mockServer
+As part of the CI/CD culture, the mockServer is a local server built with express and nodejs and is used each time you run your project with the command `yarn start-dev`
+
+## cypress
+Cypress is an e2e testing tool, used in willow-fe to test all the flows test cases. Inside this folder you will find the test scenarios in vanilla javascript.
+
+## pact
+
+## public
+In `public` you will find the `index.html` file which is the responsable to bootstrap all the application. Willow FE works as Single-Page Application.
+
+## k8s
+Here you will find all the kubernetes configuration
