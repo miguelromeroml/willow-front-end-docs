@@ -1,0 +1,61 @@
+---
+sidebar_position: 1
+sidebar_label: Project Architecture
+---
+# React Project Architecture
+In willow-fe you will find the next folder structure
+```
+src
+|-- apis
+|-- components
+|-- hooks
+|-- images
+|-- testFixtures
+|-- testUtils
+|-- types
+|-- utils
+```
+Maybe not the best one, but let's explain what are inside each folder
+
+### apis
+You will find here the `http clients` to make the requests to the differents microservices.
+
+### components
+You will find all the React components and their tests.
+
+### hooks
+Here are some common `react custom hooks` used cross all the project.
+
+### images
+Here are all the static images, most of them as svg format.
+
+### testFixtures and testUtils
+Here are some utilities for our unit tests.
+
+### types
+Here are some common types used cross all the project.
+
+### utils
+Here are some common functions used cross all the project.
+
+## Thinking in a better structure
+As willow-fe is growing and maintining different flows we can start improving our structure based on the current one.
+Let's say you are working on developing a new page/section of one of the existant flows, a better way to build this new page is creating a new folder inside components `MyNewPage`, this will help to keep a better readbility and isolate like a namespace the new functions/types/constants. 
+Now inside this folder you can create your new components, tests, types, constants, etc. Focus on the new things, and don't try to make reusable all your new stuffs, try to follow the (AHA principle)[https://kentcdodds.com/blog/aha-programming].
+
+## Components composition pattern
+React components are great, but it can be mess easily if we don't follow the core principles of this library.
+Composition and declarative programming are the two core concepts in React components so be sure you understand this concepts. Take look the next links
+[React composition](https://formidable.com/blog/2021/react-composition/)
+[Components comosition](https://javascript.plainenglish.io/component-composition-in-react-c66f1fd02b45)
+
+
+## A React hooks pattern
+[Hooks](https://www.patterns.dev/posts/hooks-pattern/) are widely used cross the project, hooks are a better way to write complex-state logic inside the components(take a look this [article](https://dev.to/jessadaggs/stateful-and-stateless-components-in-react-1lo1)). 
+An approach that we can adopt is to keep the components just for the visual things and get all the logic inside custom hooks, see the [OfferPage](https://github.com/missionlane/willow-front-end/blob/master/src/components/LandingOffer/LandingOffer.tsx) component.
+
+## Testing
+In FE we build experiences and flows for final users, all this flows are built with components that has some behavior based on the user events, like for example: when a user missed fill a required field in a form, we should display an error or alert.
+[Testing-library](https://testing-library.com/docs/react-testing-library/intro) is focused on the behavior of the components and not in the methods, props or state, think on this: if your state or props changes then your component should visualize something different based on that change, that's why your tests needs to focus on how your components changes when the users (or other componets) interacts with it.
+
+Take a look this [article](https://www.freecodecamp.org/news/testing-react-hooks/) for more info.
